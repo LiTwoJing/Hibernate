@@ -63,13 +63,16 @@ public class StudentTest {
 //		System.out.println(session.get(Student.class, 3));
 //		Student stu = session.load(Student.class, 3);
 //		System.out.println(stu);
-//		
+	
 	    //flush使缓存和数据库中查询出来的数据保持一致如果不一致将改数据库
 //		stu.setName("事情2");
 //		session.flush();  
 		
 		//refresh使缓存和数据库中查询出来的数据保持一致如果不一致将改缓存
 //		session.refresh(stu);
+		
+		//清空缓存
+//		session.clear();
 	}
 
 }
