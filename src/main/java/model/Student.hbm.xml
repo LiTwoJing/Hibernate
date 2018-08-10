@@ -6,7 +6,8 @@
     <class name="model.Student" table="STUDENT">
         <id name="id" type="java.lang.Integer">
             <column name="ID" />
-            <generator class="sequence" />
+            <generator class="native" />
+         <!--    hibernate自己判断数据库的主键机制 -->
         </id>
         <property name="name" type="java.lang.String">
             <column name="NAME" />
