@@ -9,10 +9,25 @@
   <property name="hibernate.connection.username">shop</property>
   <property name="hibernate.connection.password">123</property>
   <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+  <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
   <!--   数据库的使用方言 -->
   <property name="hibernate.show_sql">true</property>
   <property name="hibernate.format_sql">true</property>
   <property name="hibernate.hbm2ddl.auto">update</property>
+  
+  
+ <!--  c3p0的配置 -->
+ 	<!-- 连接池中连接不够用的时候向数据库申请连接的个数 -->
+  <property name="hibernate.c3p0.acquire_increment">2</property>
+	<!--   隔多少秒 扫面一次连接池中超时的连接 -->
+  <property name="hibernate.c3p0.idle_test_period">2000</property>
+  <property name="hibernate.c3p0.max_size">10</property>
+	<!--   连接池中最大缓存statements对象的个数 -->
+  <property name="hibernate.c3p0.max_statements">5</property>
+    <!-- 连接池的最小连接数 -->
+  <property name="hibernate.c3p0.min_size">2</property>
+    <!--指定连接池里连接的超时时长 -->
+  <property name="hibernate.c3p0.timeout">2000</property>
   <mapping resource="model/Student.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>
