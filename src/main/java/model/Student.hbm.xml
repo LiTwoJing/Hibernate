@@ -1,20 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2018-8-9 17:04:03 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 2018-8-13 17:30:28 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="model.Student" table="STUDENT">
         <id name="id" type="java.lang.Integer">
             <column name="ID" />
             <generator class="native" />
-         <!--    hibernate自己判断数据库的主键机制 -->
         </id>
         <property name="name" type="java.lang.String">
             <column name="NAME" />
         </property>
-        <property name="age" type="java.lang.Integer">
-            <column name="AGE" />
+        <property name="birthday" type="java.util.Date">
+            <column name="BIRTHDAY" />
         </property>
+        <!-- formula="(sql语句注意空格)" 派生字段-->
+        <property name="age" type="java.lang.Integer" formula="(select floor((sysdate-birthday)/365.25)from student s where s.id=id)"/>
         <property name="studynumber" type="java.lang.Integer">
             <column name="STUDYNUMBER" />
         </property>

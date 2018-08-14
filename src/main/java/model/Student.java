@@ -1,9 +1,12 @@
 package model;
 
+import java.util.Date;
+
 public class Student {
 	private Integer id;
 	private String name;
-	private Integer age;
+	private Date birthday;
+	private Integer age;//派生字段
 	private Integer studynumber;
 
 	public String getName() {
@@ -37,6 +40,14 @@ public class Student {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
 	public Student(String name, Integer age, Integer studynumber) {

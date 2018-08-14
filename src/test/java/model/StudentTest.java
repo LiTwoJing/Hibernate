@@ -1,6 +1,10 @@
 package model;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -53,14 +57,24 @@ public class StudentTest {
 	
 
 	@Test
-	public void test() {
+	public void test() throws ParseException {
 		
 		//执行数据库增加操作
-//		Student stu = new Student("lisi",20,01);
+//		Student stu = new Student();
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//		Date d = sdf.parse("2000-12-21");
+//		stu.setBirthday(d);
+//		stu.setName("lisi");
+//		System.out.println("dd-----------------------"+d);
+//		stu.setStudynumber(0001);
 //		session.save(stu);
+//		
+		
+		
 		
 		//执行数据库增加操作查询操作（get/load）
-//		System.out.println(session.get(Student.class, 3));
+		Student s = session.get(Student.class, 1);
+		System.out.println(s.getAge());
 //		Student stu = session.load(Student.class, 3);
 //		System.out.println(stu);
 	
