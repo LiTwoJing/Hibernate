@@ -57,36 +57,29 @@ public class StudentTest {
 	
 
 	@Test
-	public void test() throws ParseException {
-		
-		//执行数据库增加操作
-//		Student stu = new Student();
-//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-//		Date d = sdf.parse("2000-12-21");
-//		stu.setBirthday(d);
-//		stu.setName("lisi");
-//		System.out.println("dd-----------------------"+d);
-//		stu.setStudynumber(0001);
-//		session.save(stu);
+	public void test(){
+		//增加
+//		Teacher t = new Teacher();
+//		t.setName("张三");
 //		
+//		Student stu1 = new Student();
+//		stu1.setName("zhang");
+//		stu1.setTeacher(t);
+//
+//		Student stu2 = new Student();
+//		stu2.setName("san");
+//		stu2.setTeacher(t);
+//		
+//		session.save(t);
+//		session.save(stu1);
+//		session.save(stu2);
 		
 		
-		
-		//执行数据库增加操作查询操作（get/load）
-		Student s = session.get(Student.class, 1);
-		System.out.println(s.getAge());
-//		Student stu = session.load(Student.class, 3);
-//		System.out.println(stu);
-	
-	    //flush使缓存和数据库中查询出来的数据保持一致如果不一致将改数据库
-//		stu.setName("事情2");
-//		session.flush();  
-		
-		//refresh使缓存和数据库中查询出来的数据保持一致如果不一致将改缓存
-//		session.refresh(stu);
-		
-		//清空缓存
-//		session.clear();
+		//查询
+//		System.out.println(session.get(Student.class, 14).getTeacher().getName());
+		//删除 只能先删除多的一方
+		Student s = session.get(Student.class, 12);
+		session.delete(s);
 	}
 
 }

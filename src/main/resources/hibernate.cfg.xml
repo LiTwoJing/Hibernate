@@ -31,5 +31,6 @@
   <!--指定连接池里连接的超时时长 -->
   <property name="hibernate.c3p0.timeout">2000</property>
   <mapping resource="model/Student.hbm.xml"/>
+  <mapping resource="model/Teacher.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>
